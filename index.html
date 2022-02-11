@@ -38,7 +38,7 @@
             top: 25%;
             left: 0%;
             width: 360px;
-            display: none;
+            visibility: hidden;
         }
     </style>
     <script>
@@ -48,7 +48,11 @@
             init: function () {
                 this.el.sceneEl.addEventListener('markerFound', () => {
                     console.log('hello ar!')
-                    $('#gif-img').css('display', '')
+                    $('.gif-image').css('visibility', 'visible')
+                });
+                this.el.sceneEl.addEventListener('markerLost', () => {
+                    console.log('hello ar!')
+                    $('.gif-image').css('visibility', 'hidden')
                 });
             }
         });
