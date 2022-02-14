@@ -47,11 +47,11 @@
         AFRAME.registerComponent('markerhandler', {
             init: function () {
                 this.el.sceneEl.addEventListener('markerFound', () => {
-                    console.log("markerhandler", $(this).data('gif'))
+                    console.log("markerhandler", this.el)
                     $('.gif-image').css('visibility', 'visible')
                 });
                 this.el.sceneEl.addEventListener('markerLost', () => {
-                    console.log("markerLost", $(this).data('gif'))
+                    console.log("markerLost", this.el)
                     $('.gif-image').css('visibility', 'hidden')
                 });
             }
