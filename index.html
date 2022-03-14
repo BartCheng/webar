@@ -66,9 +66,10 @@
         }
 
         .img-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            position: absolute;
+            top: 25%;
+            left: 0%;
+            text-align: center;
         }
     </style>
     <script>
@@ -108,16 +109,16 @@
 
 <body style="margin : 0px; overflow: hidden;">
     <!-- minimal loader shown until image descriptors are loaded. Loading may take a while according to the device computational power -->
-    <div class="arjs-loader">
+    <!-- <div class="arjs-loader">
         <div>Loading, please wait...</div>
-    </div>
+    </div> -->
 
     <!-- a-frame scene -->
     <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
         arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
         <a-nft markerhandler type="nft" id="image_1" itemid="image_1" url="assets/d" smooth="true" smoothCount="10"
             smoothTolerance=".01" smoothThreshold="5" data-gif="image_1.gif">
-            <a-image src="assets/demo_2.gif" width="100" height="50"></a-image>
+            <!-- <a-image src="assets/demo_2.gif" width="100" height="50"></a-image> -->
         </a-nft>
         <a-entity camera></a-entity>
     </a-scene>
