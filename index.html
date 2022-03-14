@@ -9,8 +9,10 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-    <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+    <script
+        src="https://raw.githack.com/AR-js-org/AR.js/74a46dc23c27d067742781b63f8686debc9280a4/aframe/build/aframe-ar-nft.js">
+    </script>
+
     <!-- style for the loader -->
     <style>
         .arjs-loader {
@@ -113,7 +115,8 @@
         <!-- a-nft is the anchor that defines an Image Tracking entity -->
         <!-- on 'url' use the path to the Image Descriptors created before. -->
         <!-- the path should end with the name without the extension e.g. if file is trex.fset' the path should end with trex -->
-        <a-nft markerhandler type="nft" id="image_1" itemid="image_1" url="assets/d" data-gif="p03">
+        <a-nft markerhandler type="nft" id="image_1" itemid="image_1" url="assets/d" data-gif="p03" smooth="true"
+            smoothCount="10" smoothTolerance=".01" smoothThreshold="5">
         </a-nft>
         <a-entity camera></a-entity>
     </a-scene>
