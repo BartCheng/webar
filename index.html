@@ -40,32 +40,6 @@
             width: 360px;
             visibility: hidden;
         }
-
-        .orientation-status {
-            position: absolute;
-            top: 25%;
-            left: 0%;
-            width: 100%;
-        }
-
-        .bottom-right {
-            position: absolute;
-            bottom: 5%;
-            right: 5%;
-            width: 100px;
-        }
-
-        .scan {
-            width: 50%;
-            visibility: hidden;
-        }
-
-        .img-container {
-            position: absolute;
-            top: 25%;
-            left: 0%;
-            text-align: center;
-        }
     </style>
     <script>
         // 注册markerhandler组件
@@ -82,23 +56,6 @@
                 });
             }
         });
-        // $(document).ready(function () {
-        //     var evt = "onorientationchange" in window ? "orientationchange" : "resize";
-        //     window.addEventListener(evt, resize, false);
-
-        //     function resize(fals) {
-        //         if (window.orientation == 0 || window.orientation == 180) {
-        //             console.log("豎屏");
-        //             $('.orientation-status').css('visibility', 'visible')
-        //             $('.scan').css('visibility', 'hidden')
-        //         } else {
-        //             console.log("橫屏");
-        //             $('.orientation-status').css('visibility', 'hidden')
-        //             $('.scan').css('visibility', 'visible')
-        //         }
-        //     }
-        //     resize(true);
-        // });
     </script>
 </head>
 
@@ -109,20 +66,18 @@
     </div>
 
     <!-- a-frame scene -->
-    <!-- a-frame scene -->
     <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
         arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
         <!-- a-nft is the anchor that defines an Image Tracking entity -->
         <!-- on 'url' use the path to the Image Descriptors created before. -->
         <!-- the path should end with the name without the extension e.g. if file is trex.fset' the path should end with trex -->
-        <a-nft markerhandler type="nft" id="image_1" itemid="image_1" url="assets/p03/show" smooth="true"
-            smoothCount="10" smoothTolerance=".01" smoothThreshold="5" data-gif="p03">
+        <a-nft markerhandler type="nft" id="image_1" itemid="image_1" url="assets/d" smooth="true" smoothCount="10"
+            smoothTolerance=".01" smoothThreshold="5" data-gif="image_1.gif">
         </a-nft>
         <!-- static camera that moves according to the device movemenents -->
         <a-entity camera></a-entity>
     </a-scene>
     <img src="assets/demo_2.gif" class="gif-image" id="gif-img" />
-
 </body>
 
 </html>
