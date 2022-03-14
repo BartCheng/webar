@@ -79,11 +79,11 @@
             init: function () {
                 this.el.sceneEl.addEventListener('markerFound', () => {
                     console.log("markerhandler", $(this.el).data('gif'))
-                    //$('.gif-image').css('visibility', 'visible')
+                    $('.gif-image').css('visibility', 'visible')
                 });
                 this.el.sceneEl.addEventListener('markerLost', () => {
                     console.log("markerLost", $(this.el).data('gif'))
-                    //$('.gif-image').css('visibility', 'hidden')
+                    $('.gif-image').css('visibility', 'hidden')
                 });
             }
         });
