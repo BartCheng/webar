@@ -73,6 +73,7 @@
             init: function () {
                 this.el.sceneEl.addEventListener('markerFound', () => {
                     console.log("markerhandler", $(this.el).data('gif'))
+                    alert($(this.el).data('gif'))
                     $('#gif-image').attr('src', 'assets/' + $(this.el).data('gif') + '/show.gif')
                     $('.gif-image').css('visibility', 'visible')
                 });
