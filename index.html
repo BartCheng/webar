@@ -72,28 +72,30 @@
         AFRAME.registerComponent('markerhandler1', {
             init: function () {
                 this.el.sceneEl.addEventListener('markerFound', () => {
-                    console.log("markerhandler", $(this.el))
+                    console.log("markerhandler", this.el)
                     $('#gif-img').attr('src', 'assets/p03/show.gif')
                     $('.gif-image').css('visibility', 'visible')
                 });
                 this.el.sceneEl.addEventListener('markerLost', () => {
-                    console.log("markerLost", $(this.el).data('gif'))
                     $('.gif-image').css('visibility', 'hidden')
                 });
-            }
+            },
+            update: function () {
+                console.log("markerhandler update", this.el)
+            },
         });
-        AFRAME.registerComponent('registerevents', {
+        AFRAME.registerComponent('markerhandler2', {
             init: function () {
                 this.el.sceneEl.addEventListener('markerFound', () => {
-                    console.log("markerhandler2", $(this.el))
+                    console.log("markerhandler", this.el)
                     $('#gif-img').attr('src', 'assets/p04/show.gif')
                     $('.gif-image').css('visibility', 'visible')
                 });
                 this.el.sceneEl.addEventListener('markerLost', () => {
-                    console.log("markerLost", $(this.el).data('gif'))
                     $('.gif-image').css('visibility', 'hidden')
                 });
-            }
+            },
+            update: function () {},
         });
         $(document).ready(function () {
             var evt = "onorientationchange" in window ? "orientationchange" : "resize";
@@ -130,8 +132,8 @@
     </a-scene>
     <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
         arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
-        <a-nft markerhandler2 type="nft" id="image_4" itemid="image_4" url="assets/p04/show" data-gif="p04"
-            smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5">
+        <a-nft markerhandler2 type="nft" id="image_4" itemid="image_4" url="assets/d" data-gif="p03" smooth="true"
+            smoothCount="10" smoothTolerance=".01" smoothThreshold="5">
         </a-nft>
     </a-scene>
     <img src="assets/images/notice.png" class="orientation-status" />
