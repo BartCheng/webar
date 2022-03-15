@@ -69,12 +69,24 @@
     <script>
         // 注册markerhandler组件
         // 该组件中注册了，当场景中检测到图像时触发的事件
-        AFRAME.registerComponent('markerhandler', {
+        AFRAME.registerComponent('markerhandler1', {
             init: function () {
                 this.el.sceneEl.addEventListener('markerFound', () => {
-                    console.log("markerhandler", $(this.el).data('gif'))
-                    alert($(this.el).data('gif'))
-                    $('#gif-image').attr('src', 'assets/' + $(this.el).data('gif') + '/show.gif')
+                    console.log("markerhandler", $(this.el))
+                    $('#gif-img').attr('src', 'assets/p03/show.gif')
+                    $('.gif-image').css('visibility', 'visible')
+                });
+                this.el.sceneEl.addEventListener('markerLost', () => {
+                    console.log("markerLost", $(this.el).data('gif'))
+                    $('.gif-image').css('visibility', 'hidden')
+                });
+            }
+        });
+        AFRAME.registerComponent('registerevents', {
+            init: function () {
+                this.el.sceneEl.addEventListener('markerFound', () => {
+                    console.log("markerhandler2", $(this.el))
+                    $('#gif-img').attr('src', 'assets/p04/show.gif')
                     $('.gif-image').css('visibility', 'visible')
                 });
                 this.el.sceneEl.addEventListener('markerLost', () => {
@@ -105,25 +117,23 @@
 
 <body style="margin : 0px; overflow: hidden;">
     <!-- minimal loader shown until image descriptors are loaded. Loading may take a while according to the device computational power -->
-    <!-- <div class="arjs-loader">
+    <div class="arjs-loader">
         <div>Loading, please wait...</div>
-    </div> -->
-
+    </div>
+    <a-entity camera></a-entity>
     <!-- a-frame scene -->
     <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
         arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
-        <!-- a-nft is the anchor that defines an Image Tracking entity -->
-        <!-- on 'url' use the path to the Image Descriptors created before. -->
-        <!-- the path should end with the name without the extension e.g. if file is trex.fset' the path should end with trex -->
-        <a-nft markerhandler type="nft" id="image_3" itemid="image_3" url="assets/p03/show" data-gif="p03" smooth="true"
-            smoothCount="10" smoothTolerance=".01" smoothThreshold="5">
+        <a-nft markerhandler1 type="nft" id="image_3" itemid="image_3" url="assets/p03/show" data-gif="p03"
+            smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5">
         </a-nft>
-        <a-nft markerhandler type="nft" id="image_4" itemid="image_4" url="assets/d" data-gif="p04" smooth="true"
-            smoothCount="10" smoothTolerance=".01" smoothThreshold="5">
-        </a-nft>
-        <a-entity camera></a-entity>
     </a-scene>
-
+    <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
+        arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
+        <a-nft markerhandler2 type="nft" id="image_4" itemid="image_4" url="assets/p04/show" data-gif="p04"
+            smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5">
+        </a-nft>
+    </a-scene>
     <img src="assets/images/notice.png" class="orientation-status" />
     <img src="assets/images/bottom-right.png" class="bottom-right" />
     <div class="img-container">
