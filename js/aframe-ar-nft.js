@@ -4723,22 +4723,22 @@
                                         for (g in this.patternMarkers)(B = this.patternMarkers[g]).inPrevious = B.inCurrent, B.inCurrent = !1;
                                         for (g in this.barcodeMarkers)(B = this.barcodeMarkers[g]).inPrevious = B.inCurrent, B.inCurrent = !1;
                                         for (g in this.nftMarkers)(B = this.nftMarkers[g]).inPrevious = B.inCurrent, B.inCurrent = !1;
-                                        // for (var Q = 0; Q < C; Q++) {
-                                        //     var E = this.getMarker(Q),
-                                        //         i = r.UNKNOWN_MARKER,
-                                        //         o = this.trackPatternMarkerId(-1);
-                                        //     E.idPatt > -1 && (E.id === E.idPatt || -1 === E.idMatrix) ? (o = this.trackPatternMarkerId(E.idPatt), i = r.PATTERN_MARKER, E.dir !== E.dirPatt && this.setMarkerInfoDir(Q, E.dirPatt)) : E.idMatrix > -1 && (o = this.trackBarcodeMarkerId(E.idMatrix), i = r.BARCODE_MARKER, E.dir !== E.dirMatrix && this.setMarkerInfoDir(Q, E.dirMatrix)), i !== r.UNKNOWN_MARKER && o.inPrevious ? this.getTransMatSquareCont(Q, o.markerWidth, o.matrix, o.matrix) : this.getTransMatSquare(Q, o.markerWidth, o.matrix), o.inCurrent = !0, this.transMatToGLMat(o.matrix, this.transform_mat), this.transformGL_RH = this.arglCameraViewRHf(this.transform_mat), this.dispatchEvent({
-                                        //         name: "getMarker",
-                                        //         target: this,
-                                        //         data: {
-                                        //             index: Q,
-                                        //             type: i,
-                                        //             marker: E,
-                                        //             matrix: this.transform_mat,
-                                        //             matrixGL_RH: this.transformGL_RH
-                                        //         }
-                                        //     })
-                                        // }
+                                        for (var Q = 0; Q < C; Q++) {
+                                            var E = this.getMarker(Q),
+                                                i = r.UNKNOWN_MARKER,
+                                                o = this.trackPatternMarkerId(-1);
+                                            // E.idPatt > -1 && (E.id === E.idPatt || -1 === E.idMatrix) ? (o = this.trackPatternMarkerId(E.idPatt), i = r.PATTERN_MARKER, E.dir !== E.dirPatt && this.setMarkerInfoDir(Q, E.dirPatt)) : E.idMatrix > -1 && (o = this.trackBarcodeMarkerId(E.idMatrix), i = r.BARCODE_MARKER, E.dir !== E.dirMatrix && this.setMarkerInfoDir(Q, E.dirMatrix)), i !== r.UNKNOWN_MARKER && o.inPrevious ? this.getTransMatSquareCont(Q, o.markerWidth, o.matrix, o.matrix) : this.getTransMatSquare(Q, o.markerWidth, o.matrix), o.inCurrent = !0, this.transMatToGLMat(o.matrix, this.transform_mat), this.transformGL_RH = this.arglCameraViewRHf(this.transform_mat), this.dispatchEvent({
+                                            //     name: "getMarker",
+                                            //     target: this,
+                                            //     data: {
+                                            //         index: Q,
+                                            //         type: i,
+                                            //         marker: E,
+                                            //         matrix: this.transform_mat,
+                                            //         matrixGL_RH: this.transformGL_RH
+                                            //     }
+                                            // })
+                                        }
                                         var a = this.nftMarkerCount;
                                         this.detectNFTMarker();
                                         for (var D = 0; D < a; D++) {
