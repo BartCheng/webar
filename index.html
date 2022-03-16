@@ -9,27 +9,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 
-<!-- style for the loader -->
-<style>
-    .arjs-loader {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.8);
-        z-index: 9999;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .arjs-loader div {
-        text-align: center;
-        font-size: 1.25em;
-        color: white;
-    }
-</style>
 <script>
     // 注册markerhandler组件
     // 该组件中注册了，当场景中检测到图像时触发的事件
@@ -88,6 +67,23 @@
                 $('#gif-img').attr('src', '')
             });
         }
+    });
+    $(document).ready(function () {
+        var evt = "onorientationchange" in window ? "orientationchange" : "resize";
+        window.addEventListener(evt, resize, false);
+
+        function resize(fals) {
+            if (window.orientation == 0 || window.orientation == 180) {
+                console.log("豎屏");
+                $('.orientation-status').css('visibility', 'visible')
+                $('.scan').css('visibility', 'hidden')
+            } else {
+                console.log("橫屏");
+                $('.orientation-status').css('visibility', 'hidden')
+                $('.scan').css('visibility', 'visible')
+            }
+        }
+        resize(true);
     });
 </script>
 <!-- style for the loader -->
@@ -178,7 +174,10 @@
             smoothThreshold="5">
         </a-nft>
     </a-scene>
+    <img src="assets/images/notice.png" class="orientation-status" />
+    <img src="assets/images/bottom-right.png" class="bottom-right" />
     <div class="img-container">
         <img src="model/p03/show.gif" class="gif-image" id="gif-img" />
+        <img src="assets/images/scan.png" class="scan" />
     </div>
 </body>
