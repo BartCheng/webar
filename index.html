@@ -9,7 +9,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="/js/aframe-ar-nft.js">
+    <script
+        src="https://raw.githack.com/AR-js-org/AR.js/74a46dc23c27d067742781b63f8686debc9280a4/aframe/build/aframe-ar-nft.js">
     </script>
 
     <!-- style for the loader -->
@@ -68,17 +69,18 @@
     <script>
         // 注册markerhandler组件
         // 该组件中注册了，当场景中检测到图像时触发的事件
-        AFRAME.registerComponent('markerhandler1', {
+        AFRAME.registerComponent('markerhandler', {
             init: function () {
                 this.el.sceneEl.addEventListener('markerFound', () => {
-                    console.log("markerhandler", this.el)
-                    $('#gif-img').attr('src', 'assets/p03/show.gif')
+                    console.log("markerhandler", $(this.el))
+                    $('#gif-image').attr('src', 'assets/' + $(this.el).data('gif') + '/show.gif')
                     $('.gif-image').css('visibility', 'visible')
                 });
                 this.el.sceneEl.addEventListener('markerLost', () => {
+                    console.log("markerLost", $(this.el).data('gif'))
                     $('.gif-image').css('visibility', 'hidden')
                 });
-            },
+            }
         });
         $(document).ready(function () {
             var evt = "onorientationchange" in window ? "orientationchange" : "resize";
@@ -105,16 +107,17 @@
     <div class="arjs-loader">
         <div>Loading, please wait...</div>
     </div>
+
     <!-- a-frame scene -->
     <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
         arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
-        <a-nft markerhandler1 type="nft" id="image_3" itemid="image_3" url="/assets/p03/show" data-gif="p03"
-            smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5">
+        <a-nft markerhandler type="nft" id="image_3" itemid="image_3" url="assets/p03/show" data-gif="p03" smooth="true"
+            smoothCount="10" smoothTolerance=".01" smoothThreshold="5">
         </a-nft>
-        <a-entity camera></a-entity>
     </a-scene>
-    <!-- <img src="assets/images/notice.png" class="orientation-status" />
-    <img src="assets/images/bottom-right.png" class="bottom-right" /> -->
+    <a-entity camera></a-entity>
+    <img src="assets/images/notice.png" class="orientation-status" />
+    <img src="assets/images/bottom-right.png" class="bottom-right" />
     <div class="img-container">
         <img src="assets/p03/show.gif" class="gif-image" id="gif-img" />
         <img src="assets/images/scan.png" class="scan" />
