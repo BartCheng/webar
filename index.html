@@ -43,6 +43,7 @@
             this.el.sceneEl.addEventListener('markerLost', () => {
                 console.log("markerLost", $(this.el).data('gif'))
                 $('.gif-image').css('visibility', 'hidden')
+                $('#gif-img').attr('src', '')
             });
         }
     });
@@ -56,6 +57,7 @@
             this.el.sceneEl.addEventListener('markerLost', () => {
                 console.log("markerLost2", $(this.el).data('gif'))
                 $('.gif-image').css('visibility', 'hidden')
+                $('#gif-img').attr('src', '')
             });
         }
     });
@@ -69,6 +71,21 @@
             this.el.sceneEl.addEventListener('markerLost', () => {
                 console.log("markerLost2", $(this.el).data('gif'))
                 $('.gif-image').css('visibility', 'hidden')
+                $('#gif-img').attr('src', '')
+            });
+        }
+    });
+    AFRAME.registerComponent('markerhandler4', {
+        init: function () {
+            this.el.sceneEl.addEventListener('markerFound', () => {
+                console.log("markerhandler2", $(this.el))
+                $('#gif-img').attr('src', 'model/p07/show.gif')
+                $('.gif-image').css('visibility', 'visible')
+            });
+            this.el.sceneEl.addEventListener('markerLost', () => {
+                console.log("markerLost2", $(this.el).data('gif'))
+                $('.gif-image').css('visibility', 'hidden')
+                $('#gif-img').attr('src', '')
             });
         }
     });
@@ -152,6 +169,12 @@
     <a-scene vr-mode-ui="enabled: false;" gesture-detector renderer="logarithmicDepthBuffer: true;" embedded
         arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
         <a-nft markerhandler3 type="nft" url="model/p06/show" smooth="true" smoothCount="10" smoothTolerance=".01"
+            smoothThreshold="5">
+        </a-nft>
+    </a-scene>
+    <a-scene vr-mode-ui="enabled: false;" gesture-detector renderer="logarithmicDepthBuffer: true;" embedded
+        arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
+        <a-nft markerhandler4 type="nft" url="model/p07/show" smooth="true" smoothCount="10" smoothTolerance=".01"
             smoothThreshold="5">
         </a-nft>
     </a-scene>
