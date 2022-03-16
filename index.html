@@ -68,6 +68,20 @@
             });
         }
     });
+    AFRAME.registerComponent('markerhandler5', {
+        init: function () {
+            this.el.sceneEl.addEventListener('markerFound', () => {
+                console.log("markerhandler2", $(this.el))
+                $('#gif-img').attr('src', 'model/p15/show.gif')
+                $('.gif-image').css('visibility', 'visible')
+            });
+            this.el.sceneEl.addEventListener('markerLost', () => {
+                console.log("markerLost2", $(this.el).data('gif'))
+                $('.gif-image').css('visibility', 'hidden')
+                $('#gif-img').attr('src', '')
+            });
+        }
+    });
     $(document).ready(function () {
         var evt = "onorientationchange" in window ? "orientationchange" : "resize";
         window.addEventListener(evt, resize, false);
@@ -174,10 +188,16 @@
             smoothThreshold="5">
         </a-nft>
     </a-scene>
+    <a-scene vr-mode-ui="enabled: false;" gesture-detector renderer="logarithmicDepthBuffer: true;" embedded
+        arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
+        <a-nft markerhandler5 type="nft" url="model/p15/show" smooth="true" smoothCount="10" smoothTolerance=".01"
+            smoothThreshold="5">
+        </a-nft>
+    </a-scene>
     <img src="assets/images/notice.png" class="orientation-status" />
     <img src="assets/images/bottom-right.png" class="bottom-right" />
     <div class="img-container">
-        <img src="model/p03/show.gif" class="gif-image" id="gif-img" />
+        <img src="" class="gif-image" id="gif-img" />
         <img src="assets/images/scan.png" class="scan" />
     </div>
 </body>
