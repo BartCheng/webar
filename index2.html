@@ -1,0 +1,122 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-image.prod.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-image-aframe.prod.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const exampleTarget1 = document.querySelector('#example-target-1');
+        // detect target found
+        exampleTarget1.addEventListener("targetFound", event => {
+            console.log("target found");
+            $('#gif-img').attr('src', 'model/p00/show.gif')
+            $('.gif-image').css('visibility', 'visible')
+        });
+        // detect target lost
+        exampleTarget1.addEventListener("targetLost", event => {
+            console.log("target lost");
+            $('.gif-image').css('visibility', 'hidden')
+            $('#gif-img').attr('src', '')
+        });
+        const exampleTarget2 = document.querySelector('#example-target-2');
+        // detect target found
+        exampleTarget2.addEventListener("targetFound", event => {
+            console.log("target found");
+            $('#gif-img').attr('src', 'model/p03/show.gif')
+            $('.gif-image').css('visibility', 'visible')
+        });
+        // detect target lost
+        exampleTarget2.addEventListener("targetLost", event => {
+            console.log("target lost");
+            $('.gif-image').css('visibility', 'hidden')
+            $('#gif-img').attr('src', '')
+        });
+    })
+</script>
+<!-- style for the loader -->
+<style>
+    .arjs-loader {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .arjs-loader div {
+        text-align: center;
+        font-size: 1.25em;
+        color: white;
+    }
+
+    .gif-image {
+        position: absolute;
+        width: 360px;
+        visibility: hidden;
+    }
+
+    .orientation-status {
+        position: absolute;
+        top: 25%;
+        left: 0%;
+        width: 100%;
+    }
+
+    .bottom-right {
+        position: absolute;
+        bottom: 5%;
+        right: 5%;
+        width: 100px;
+    }
+
+    .scan {
+        width: 50%;
+    }
+
+    .img-container {
+        position: absolute;
+        top: 25%;
+        left: 0%;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <a-scene mindar-image="imageTargetSrc: model/targets.mind;" color-space="sRGB"
+        renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false"
+        device-orientation-permission-ui="enabled: false">
+        <a-assets>
+            <a-asset-item id="bearModel" src="model/p00/show.gltf">
+            </a-asset-item>
+            <a-asset-item id="raccoonModel" src="model/p00/show.gltf">
+            </a-asset-item>
+        </a-assets>
+
+        <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+        <a-entity id="example-target-1" mindar-image-target="targetIndex: 0">
+
+        </a-entity>
+        <a-entity id="example-target-2" mindar-image-target="targetIndex: 1">
+
+        </a-entity>
+    </a-scene>
+    <img src="assets/images/bottom-right.png" class="bottom-right" />
+    <div class="img-container">
+        <img src="" class="gif-image" id="gif-img" />
+        <img src="assets/images/scan.png" class="scan" />
+    </div>
+</body>
+
+</html>
