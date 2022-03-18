@@ -10,37 +10,37 @@
 </head>
 
 <script>
+    AFRAME.registerComponent('markerhandler1', {
+        init: function () {
+            var marker = this.el;
+            this.el.sceneEl.addEventListener('markerFound', () => {
+                $('#gif-img').attr('src', 'model/p03/show.gif')
+                $('.gif-image').css('visibility', 'visible')
+            });
+            this.el.sceneEl.addEventListener('markerLost', () => {
+                console.log("markerLost", $(this.el).data('gif'))
+                $('.gif-image').css('visibility', 'hidden')
+                $('#gif-img').attr('src', '')
+            });
+        }
+    });
+    AFRAME.registerComponent('markerhandler2', {
+        init: function () {
+            var marker = this.el;
+            this.el.sceneEl.addEventListener('markerFound', () => {
+                $('#gif-img').attr('src', 'model/p00/show.gif')
+                $('.gif-image').css('visibility', 'visible')
+            });
+            this.el.sceneEl.addEventListener('markerLost', () => {
+                console.log("markerLost", $(this.el).data('gif'))
+                $('.gif-image').css('visibility', 'hidden')
+                $('#gif-img').attr('src', '')
+            });
+        }
+    });
     // 注册markerhandler组件
     // 该组件中注册了，当场景中检测到图像时触发的事件
     $(document).ready(function () {
-        AFRAME.registerComponent('markerhandler1', {
-            init: function () {
-                var marker = this.el;
-                this.el.sceneEl.addEventListener('markerFound', () => {
-                    $('#gif-img').attr('src', 'model/p03/show.gif')
-                    $('.gif-image').css('visibility', 'visible')
-                });
-                this.el.sceneEl.addEventListener('markerLost', () => {
-                    console.log("markerLost", $(this.el).data('gif'))
-                    $('.gif-image').css('visibility', 'hidden')
-                    $('#gif-img').attr('src', '')
-                });
-            }
-        });
-        AFRAME.registerComponent('markerhandler2', {
-            init: function () {
-                var marker = this.el;
-                this.el.sceneEl.addEventListener('markerFound', () => {
-                    $('#gif-img').attr('src', 'model/p00/show.gif')
-                    $('.gif-image').css('visibility', 'visible')
-                });
-                this.el.sceneEl.addEventListener('markerLost', () => {
-                    console.log("markerLost", $(this.el).data('gif'))
-                    $('.gif-image').css('visibility', 'hidden')
-                    $('#gif-img').attr('src', '')
-                });
-            }
-        });
         var evt = "onorientationchange" in window ? "orientationchange" : "resize";
         window.addEventListener(evt, resize, false);
 
