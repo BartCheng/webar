@@ -10,71 +10,88 @@
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
 <script>
+    $(document).ready(function () {
+        $('.mindar-ui-scanning').css('display', 'none')
+    })
     document.addEventListener("DOMContentLoaded", function () {
         const exampleTarget1 = document.querySelector('#example-target-1');
         // detect target found
         exampleTarget1.addEventListener("targetFound", event => {
             $('#gif-img').attr('src', 'model/p00/show.gif')
+            $('.gif-image').css('top', '-30%')
             $('.gif-image').css('visibility', 'visible')
         });
         // detect target lost
         exampleTarget1.addEventListener("targetLost", event => {
             $('.gif-image').css('visibility', 'hidden')
+            $('.gif-image').css('top', '0%')
             $('#gif-img').attr('src', '')
         });
         const exampleTarget2 = document.querySelector('#example-target-2');
         exampleTarget2.addEventListener("targetFound", event => {
             $('#gif-img').attr('src', 'model/p03/show.gif')
+            $('.gif-image').css('top', '-15%')
             $('.gif-image').css('visibility', 'visible')
         });
         exampleTarget2.addEventListener("targetLost", event => {
             $('.gif-image').css('visibility', 'hidden')
+            $('.gif-image').css('top', '0%')
             $('#gif-img').attr('src', '')
         });
         const exampleTarget3 = document.querySelector('#example-target-3');
         exampleTarget3.addEventListener("targetFound", event => {
             $('#gif-img').attr('src', 'model/p04/show.gif')
+            $('.gif-image').css('top', '-15%')
             $('.gif-image').css('visibility', 'visible')
         });
         exampleTarget3.addEventListener("targetLost", event => {
             $('.gif-image').css('visibility', 'hidden')
+            $('.gif-image').css('top', '0%')
             $('#gif-img').attr('src', '')
         });
         const exampleTarget4 = document.querySelector('#example-target-4');
         exampleTarget4.addEventListener("targetFound", event => {
             $('#gif-img').attr('src', 'model/p06/show.gif')
+            $('.gif-image').css('top', '-15%')
             $('.gif-image').css('visibility', 'visible')
         });
         exampleTarget4.addEventListener("targetLost", event => {
             $('.gif-image').css('visibility', 'hidden')
+            $('.gif-image').css('top', '0%')
             $('#gif-img').attr('src', '')
         });
         const exampleTarget5 = document.querySelector('#example-target-5');
         exampleTarget5.addEventListener("targetFound", event => {
-        $('#gif-img').attr('src', 'model/p07/show.gif')
-        $('.gif-image').css('visibility', 'visible')
+            $('#gif-img').attr('src', 'model/p07/show.gif')
+            $('.gif-image').css('top', '0%')
+            $('.gif-image').css('visibility', 'visible')
         });
         exampleTarget5.addEventListener("targetLost", event => {
-        $('.gif-image').css('visibility', 'hidden')
-        $('#gif-img').attr('src', '')
+            $('.gif-image').css('visibility', 'hidden')
+            $('.gif-image').css('top', '0%')
+            $('#gif-img').attr('src', '')
         });
         const exampleTarget6 = document.querySelector('#example-target-6');
         exampleTarget6.addEventListener("targetFound", event => {
-        $('#gif-img').attr('src', 'model/p15/show.gif')
-        $('.gif-image').css('visibility', 'visible')
+            $('#gif-img').attr('src', 'model/p15/show.gif')
+            $('.gif-image').css('top', '0%')
+            $('.gif-image').css('visibility', 'visible')
         });
         exampleTarget6.addEventListener("targetLost", event => {
-        $('.gif-image').css('visibility', 'hidden')
-        $('#gif-img').attr('src', '')
+            $('.gif-image').css('visibility', 'hidden')
+            $('.gif-image').css('top', '0%')
+            $('#gif-img').attr('src', '')
         });
         const exampleTarget7 = document.querySelector('#example-target-7');
         exampleTarget7.addEventListener("targetFound", event => {
-        $('#gif-img').attr('src', 'model/p21/show.gif')
-        $('.gif-image').css('visibility', 'visible')
+            $('#gif-img').attr('src', 'model/p21/show.gif')
+            $('.gif-image').css('top', '-30%')
+            $('.gif-image').css('visibility', 'visible')
         });
         exampleTarget7.addEventListener("targetLost", event => {
-        $('.gif-image').css('visibility', 'hidden')
-        $('#gif-img').attr('src', '')
+            $('.gif-image').css('visibility', 'hidden')
+            $('.gif-image').css('top', '0%')
+            $('#gif-img').attr('src', '')
         });
     })
 </script>
