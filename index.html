@@ -46,11 +46,9 @@
 
         function resize(fals) {
             if (window.orientation == 0 || window.orientation == 180) {
-                console.log("豎屏");
-                $('.orientation-status').css('visibility', 'visible')
-                $('.scan').css('visibility', 'hidden')
+                $('.orientation-status').css('visibility', 'hidden')
+                $('.scan').css('visibility', 'visible')
             } else {
-                console.log("橫屏");
                 $('.orientation-status').css('visibility', 'hidden')
                 $('.scan').css('visibility', 'visible')
             }
@@ -129,7 +127,7 @@
     </a-scene>
     <a-scene vr-mode-ui="enabled: false;" gesture-detector renderer="logarithmicDepthBuffer: true;" embedded
         arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
-        <a-nft markerhandler2 type="nft" url="model/00/show" smooth="true" smoothCount="10" smoothTolerance=".01"
+        <a-nft markerhandler2 type="nft" url="model/p00/show" smooth="true" smoothCount="10" smoothTolerance=".01"
             smoothThreshold="5">
         </a-nft>
     </a-scene>
