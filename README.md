@@ -1,25 +1,31 @@
+# Zappar for ThreeJS
+## Standalone Bootstrap Project
 
-<h1 align="center">用AR.js做图片追踪的Demo</h1>
+In this project you'll find the following files that get you up and running with Zappar for ThreeJS.
+- *index.html*: contains the basic structure of you page and any necessary HTML UI elements
+- *index.js*: contains the code the sets up your ThreeJS scene and AR experience
+- *style.css*: contains the CSS for your page
 
-实现打开手机摄像头，对图片（smoking_boy.jpg）进行追踪，显示模型并且可旋转缩放。
-需要https协议才能打开摄像头，把项目放到服务器上，用手机打开网站。
+Head to the NPM package page for more information on how to build best-in-class AR experiences: [Zappar for ThreeJS](https://www.npmjs.com/package/@zappar/zappar-threejs) (@zappar/zappar-threejs)
 
-AR.js项目地址
-https://ar-js-org.github.io/AR.js-Docs/image-tracking/
-旋转功能项目地址 arjs-gestures 
-https://github.com/fcor/arjs-gestures
+## Preview
+Scan the QR code below using your native camera app or QR code reader to view the example:
+​
+![Preview QR Code"](preview-qr-code.png)
 
-替换想要追踪的图片
-把图片训练成AR.JS能够识别的形式，图片训练有web版和node版。
-选择识别度高，分辨率高的图片，否则会识别不出来。
-训练文件越大，等待时间越长，训练完成后替换掉nft里面的文件。
+### Local Preview and Testing
 
-web版
-https://carnaux.github.io/NFT-Marker-Creator/#/
-正确返回下载的3个文件格式分别是 .fset .fset3 .iset
+Due to browser restrictions surrounding use of the camera, you must use HTTPS to view or preview your site, even if doing so locally from your computer. If you're using `webpack`, consider using `webpack-dev-server` which has an `https` option to enable this.
 
-node版
-https://github.com/Carnaux/NFT-Marker-Creator
+Alternatively you can use the [ZapWorks command-line tool](https://www.npmjs.com/package/@zappar/zapworks-cli) to serve a folder over HTTPS for access on your local computer, like this:
+```
+zapworks serve .
+```
 
-替换模型
-把model里面的文件进行替换
+The command also lets you serve the folder for access by other devices on your local network, like this:
+```
+zapworks serve . --lan
+```
+
+## Target Image
+![Target Image](example-tracking-image.png)
