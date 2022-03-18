@@ -15,40 +15,12 @@
     AFRAME.registerComponent('markerhandler1', {
         init: function () {
             this.el.sceneEl.addEventListener('markerFound', () => {
-                console.log("markerhandler", $(this.el))
+                console.log("markerhandler", $(this.el).data('folder'))
                 $('#gif-img').attr('src', 'model/p03/show.gif')
                 $('.gif-image').css('visibility', 'visible')
             });
             this.el.sceneEl.addEventListener('markerLost', () => {
                 console.log("markerLost", $(this.el).data('gif'))
-                $('.gif-image').css('visibility', 'hidden')
-                $('#gif-img').attr('src', '')
-            });
-        }
-    });
-    AFRAME.registerComponent('markerhandler2', {
-        init: function () {
-            this.el.sceneEl.addEventListener('markerFound', () => {
-                console.log("markerhandler2", $(this.el))
-                $('#gif-img').attr('src', 'model/p04/show.gif')
-                $('.gif-image').css('visibility', 'visible')
-            });
-            this.el.sceneEl.addEventListener('markerLost', () => {
-                console.log("markerLost2", $(this.el).data('gif'))
-                $('.gif-image').css('visibility', 'hidden')
-                $('#gif-img').attr('src', '')
-            });
-        }
-    });
-    AFRAME.registerComponent('markerhandler3', {
-        init: function () {
-            this.el.sceneEl.addEventListener('markerFound', () => {
-                console.log("markerhandler2", $(this.el))
-                $('#gif-img').attr('src', 'model/p00/show.gif')
-                $('.gif-image').css('visibility', 'visible')
-            });
-            this.el.sceneEl.addEventListener('markerLost', () => {
-                console.log("markerLost2", $(this.el).data('gif'))
                 $('.gif-image').css('visibility', 'hidden')
                 $('#gif-img').attr('src', '')
             });
@@ -133,14 +105,14 @@
     </div>
 
     <!-- a-frame scene -->
-    <a-scene vr-mode-ui="enabled: false;" gesture-detector renderer="logarithmicDepthBuffer: true;" embedded
+    <a-scene vr-mode-ui="enabled: false;" gesture-detector embedded
         arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
         <!-- 图片训练后文件路径，不带文件拓展名！ -->
         <a-nft markerhandler1 type="nft" url="model/p03/show" smooth="true" smoothCount="10" smoothTolerance=".01"
-            smoothThreshold="5">
+            smoothThreshold="5" data-folder="p03">
         </a-nft>
         <a-nft markerhandler1 type="nft" url="model/p00/show" smooth="true" smoothCount="10" smoothTolerance=".01"
-            smoothThreshold="5">
+            smoothThreshold="5" data-folder="p00">
         </a-nft>
         <!-- static camera that moves according to the device movemenents -->
         <a-entity id="camera" camera look-controls></a-entity>
