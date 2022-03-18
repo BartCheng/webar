@@ -14,8 +14,9 @@
     // 该组件中注册了，当场景中检测到图像时触发的事件
     AFRAME.registerComponent('markerhandler1', {
         init: function () {
+            var marker = this.el;
             this.el.sceneEl.addEventListener('markerFound', () => {
-                console.log("markerhandler", $(this.el).data('folder'))
+                alert(marker.getAttribute('name'));
                 $('#gif-img').attr('src', 'model/p03/show.gif')
                 $('.gif-image').css('visibility', 'visible')
             });
@@ -105,17 +106,16 @@
     </div>
 
     <!-- a-frame scene -->
-    <a-scene vr-mode-ui="enabled: false;" gesture-detector embedded
-        arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
+    <a-scene vr-mode-ui="enabled: false;" renderer='antialias: true; alpha: true; precision: mediump;' gesture-detector
+        embedded arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
         <!-- 图片训练后文件路径，不带文件拓展名！ -->
-        <a-nft markerhandler1 type="nft" url="model/p03/show" smooth="true" smoothCount="10" smoothTolerance=".01"
-            smoothThreshold="5" data-folder="p03">
+        <a-nft markerhandler1 name="alterra1" type="nft" url="model/p03/show" smooth="true" smoothCount="10"
+            smoothTolerance=".01" smoothThreshold="5" data-folder="p03">
         </a-nft>
-        <a-nft markerhandler1 type="nft" url="model/p00/show" smooth="true" smoothCount="10" smoothTolerance=".01"
-            smoothThreshold="5" data-folder="p00">
+        <a-nft markerhandler1 name="alterra2" type="nft" url="model/p00/show" smooth="true" smoothCount="10"
+            smoothTolerance=".01" smoothThreshold="5" data-folder="p00">
         </a-nft>
-        <!-- static camera that moves according to the device movemenents -->
-        <a-entity id="camera" camera look-controls></a-entity>
+        <a-entity camera></a-entity>
     </a-scene>
     <!-- <a-scene vr-mode-ui="enabled: false;" gesture-detector renderer="logarithmicDepthBuffer: true;" embedded
         arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
