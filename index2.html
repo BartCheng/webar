@@ -14,28 +14,67 @@
         const exampleTarget1 = document.querySelector('#example-target-1');
         // detect target found
         exampleTarget1.addEventListener("targetFound", event => {
-            console.log("target found");
             $('#gif-img').attr('src', 'model/p00/show.gif')
             $('.gif-image').css('visibility', 'visible')
         });
         // detect target lost
         exampleTarget1.addEventListener("targetLost", event => {
-            console.log("target lost");
             $('.gif-image').css('visibility', 'hidden')
             $('#gif-img').attr('src', '')
         });
         const exampleTarget2 = document.querySelector('#example-target-2');
-        // detect target found
         exampleTarget2.addEventListener("targetFound", event => {
-            console.log("target found");
             $('#gif-img').attr('src', 'model/p03/show.gif')
             $('.gif-image').css('visibility', 'visible')
         });
-        // detect target lost
         exampleTarget2.addEventListener("targetLost", event => {
-            console.log("target lost");
             $('.gif-image').css('visibility', 'hidden')
             $('#gif-img').attr('src', '')
+        });
+        const exampleTarget3 = document.querySelector('#example-target-3');
+        exampleTarget3.addEventListener("targetFound", event => {
+            $('#gif-img').attr('src', 'model/p04/show.gif')
+            $('.gif-image').css('visibility', 'visible')
+        });
+        exampleTarget3.addEventListener("targetLost", event => {
+            $('.gif-image').css('visibility', 'hidden')
+            $('#gif-img').attr('src', '')
+        });
+        const exampleTarget4 = document.querySelector('#example-target-4');
+        exampleTarget4.addEventListener("targetFound", event => {
+            $('#gif-img').attr('src', 'model/p06/show.gif')
+            $('.gif-image').css('visibility', 'visible')
+        });
+        exampleTarget4.addEventListener("targetLost", event => {
+            $('.gif-image').css('visibility', 'hidden')
+            $('#gif-img').attr('src', '')
+        });
+        const exampleTarget5 = document.querySelector('#example-target-5');
+        exampleTarget5.addEventListener("targetFound", event => {
+        $('#gif-img').attr('src', 'model/p07/show.gif')
+        $('.gif-image').css('visibility', 'visible')
+        });
+        exampleTarget5.addEventListener("targetLost", event => {
+        $('.gif-image').css('visibility', 'hidden')
+        $('#gif-img').attr('src', '')
+        });
+        const exampleTarget6 = document.querySelector('#example-target-6');
+        exampleTarget6.addEventListener("targetFound", event => {
+        $('#gif-img').attr('src', 'model/p15/show.gif')
+        $('.gif-image').css('visibility', 'visible')
+        });
+        exampleTarget6.addEventListener("targetLost", event => {
+        $('.gif-image').css('visibility', 'hidden')
+        $('#gif-img').attr('src', '')
+        });
+        const exampleTarget7 = document.querySelector('#example-target-7');
+        exampleTarget7.addEventListener("targetFound", event => {
+        $('#gif-img').attr('src', 'model/p21/show.gif')
+        $('.gif-image').css('visibility', 'visible')
+        });
+        exampleTarget7.addEventListener("targetLost", event => {
+        $('.gif-image').css('visibility', 'hidden')
+        $('#gif-img').attr('src', '')
         });
     })
 </script>
@@ -96,21 +135,15 @@
     <a-scene mindar-image="imageTargetSrc: model/targets.mind;" color-space="sRGB"
         renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false"
         device-orientation-permission-ui="enabled: false">
-        <a-assets>
-            <a-asset-item id="bearModel" src="model/p00/show.gltf">
-            </a-asset-item>
-            <a-asset-item id="raccoonModel" src="model/p00/show.gltf">
-            </a-asset-item>
-        </a-assets>
-
         <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
-        <a-entity id="example-target-1" mindar-image-target="targetIndex: 0">
-
-        </a-entity>
-        <a-entity id="example-target-2" mindar-image-target="targetIndex: 1">
-
-        </a-entity>
+        <a-entity id="example-target-1" mindar-image-target="targetIndex: 0"></a-entity>
+        <a-entity id="example-target-2" mindar-image-target="targetIndex: 1"></a-entity>
+        <a-entity id="example-target-3" mindar-image-target="targetIndex: 2"></a-entity>
+        <a-entity id="example-target-4" mindar-image-target="targetIndex: 3"></a-entity>
+        <a-entity id="example-target-5" mindar-image-target="targetIndex: 4"></a-entity>
+        <a-entity id="example-target-6" mindar-image-target="targetIndex: 5"></a-entity>
+        <a-entity id="example-target-7" mindar-image-target="targetIndex: 6"></a-entity>
     </a-scene>
     <img src="assets/images/bottom-right.png" class="bottom-right" />
     <div class="img-container">
