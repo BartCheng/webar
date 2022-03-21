@@ -149,11 +149,18 @@
 </style>
 
 <body>
-    <a-scene mindar-image="imageTargetSrc: model/targets.mind;" color-space="sRGB"
+    <a-scene mindar-image="imageTargetSrc: model/targets_test.mind;" color-space="sRGB"
         renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false"
         device-orientation-permission-ui="enabled: false">
         <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-
+        <a-assets>
+            <a-asset-item id="bearModel"
+                src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/examples/image-tracking/assets/band-example/bear/scene.gltf">
+            </a-asset-item>
+            <a-asset-item id="raccoonModel"
+                src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/examples/image-tracking/assets/band-example/raccoon/scene.gltf">
+            </a-asset-item>
+        </a-assets>
         <a-entity id="example-target-1" mindar-image-target="targetIndex: 0"></a-entity>
         <a-entity id="example-target-2" mindar-image-target="targetIndex: 1"></a-entity>
         <a-entity id="example-target-3" mindar-image-target="targetIndex: 2"></a-entity>
@@ -161,6 +168,122 @@
         <a-entity id="example-target-5" mindar-image-target="targetIndex: 4"></a-entity>
         <a-entity id="example-target-6" mindar-image-target="targetIndex: 5"></a-entity>
         <a-entity id="example-target-7" mindar-image-target="targetIndex: 6"></a-entity>
+        <a-entity id="example-target-8" mindar-image-target="targetIndex: 7">
+            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
+                animation-mixer>
+        </a-entity>
+        <a-entity id="example-target-9" mindar-image-target="targetIndex: 8">
+            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
+                animation-mixer>
+        </a-entity>
+        <a-entity id="example-target-10" mindar-image-target="targetIndex: 9">
+            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
+                animation-mixer>
+        </a-entity>
+        <a-entity id="example-target-11" mindar-image-target="targetIndex: 10">
+            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
+                animation-mixer>
+        </a-entity>
+        <a-entity id="example-target-12" mindar-image-target="targetIndex: 11">
+            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
+                animation-mixer>
+        </a-entity>
+        <a-entity id="example-target-13" mindar-image-target="targetIndex: 12">
+            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
+                animation-mixer>
+        </a-entity>
+        <a-entity id="example-target-14" mindar-image-target="targetIndex: 13">
+            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
+                animation-mixer>
+        </a-entity>
+        <a-entity id="example-target-15" mindar-image-target="targetIndex: 14">
+            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
+                animation-mixer>
+        </a-entity>
+        <a-entity id="example-target-16" mindar-image-target="targetIndex: 15">
+            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
+                animation-mixer>
+        </a-entity>
+        <a-entity id="example-target-17" mindar-image-target="targetIndex: 16">
+            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
+                animation-mixer>
+        </a-entity>
+        <a-entity id="example-target-18" mindar-image-target="targetIndex: 17">
+            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
+                animation-mixer>
+        </a-entity>
+        <a-entity id="example-target-19" mindar-image-target="targetIndex: 18">
+            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
+                animation-mixer>
+        </a-entity>
+        <a-entity id="example-target-20" mindar-image-target="targetIndex: 19">
+            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
+                animation-mixer>
+        </a-entity>
+        <a-entity id="example-target-21" mindar-image-target="targetIndex: 20">
+            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
+                animation-mixer>
+        </a-entity>
+        <a-entity id="example-target-22" mindar-image-target="targetIndex: 21">
+            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
+                animation-mixer>
+        </a-entity>
+        <a-entity id="example-target-23" mindar-image-target="targetIndex: 22">
+            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
+                animation-mixer>
+        </a-entity>
+        <a-entity id="example-target-24" mindar-image-target="targetIndex: 23">
+            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
+                animation-mixer>
+        </a-entity>
+        <a-entity id="example-target-25" mindar-image-target="targetIndex: 24">
+            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
+                animation-mixer>
+        </a-entity>
+        <a-entity id="example-target-26" mindar-image-target="targetIndex: 25">
+            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
+                animation-mixer>
+        </a-entity>
+        <a-entity id="example-target-27" mindar-image-target="targetIndex: 26">
+            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
+                animation-mixer>
+        </a-entity>
+        <a-entity id="example-target-28" mindar-image-target="targetIndex: 27">
+            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
+                animation-mixer>
+        </a-entity>
+        <a-entity id="example-target-29" mindar-image-target="targetIndex: 28">
+            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
+                animation-mixer>
+        </a-entity>
+        <a-entity id="example-target-30" mindar-image-target="targetIndex: 29">
+            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
+                animation-mixer>
+        </a-entity>
+        <a-entity id="example-target-31" mindar-image-target="targetIndex: 30">
+            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
+                animation-mixer>
+        </a-entity>
+        <a-entity id="example-target-32" mindar-image-target="targetIndex: 31">
+            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
+                animation-mixer>
+        </a-entity>
+        <a-entity id="example-target-33" mindar-image-target="targetIndex: 32">
+            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
+                animation-mixer>
+        </a-entity>
+        <a-entity id="example-target-34" mindar-image-target="targetIndex: 33">
+            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
+                animation-mixer>
+        </a-entity>
+        <a-entity id="example-target-35" mindar-image-target="targetIndex: 34">
+            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
+                animation-mixer>
+        </a-entity>
+        <a-entity id="example-target-36" mindar-image-target="targetIndex: 35">
+            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
+                animation-mixer>
+        </a-entity>
     </a-scene>
     <img src="assets/images/bottom-right.png" class="bottom-right" />
     <div class="img-container">
