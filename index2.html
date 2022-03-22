@@ -146,48 +146,10 @@
         left: 0%;
         text-align: center;
     }
-
-    .custom-ui-overlay {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        background: transparent;
-        z-index: 2;
-    }
-
-    .custom-scanning {
-        width: 50vh;
-        height: 50vh;
-    }
-
-    .custom-scan {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        opacity: 0.8;
-        background: linear-gradient(to right, #fff 10px, transparent 10px) 0 0, linear-gradient(to right, #fff 10px,
-                transparent 10px) 0 100%, linear-gradient(to left, #fff 10px, transparent 10px) 100% 0, linear-gradient(to left,
-                #fff 10px, transparent 10px) 100% 100%, linear-gradient(to bottom, #fff 10px, transparent 10px) 0 0, linear-gradient(to bottom, #fff 10px, transparent 10px) 100% 0, linear-gradient(to top, #fff 10px, transparent 10px) 0 100%, linear-gradient(to top, #fff 10px, transparent 10px) 100% 100%;
-        background-repeat: no-repeat;
-        background-size: 40px 40px;
-    }
-
-    .custom-scan-line {
-        position: absolute;
-        width: 100%;
-        height: 10px;
-        background: #fff;
-        animation: move 2s linear infinite;
-    }
 </style>
 
 <body>
-    <a-scene mindar-image="imageTargetSrc: model/targets_test.mind; uiLoading=no;" color-space="sRGB"
+    <a-scene mindar-image="imageTargetSrc: model/targets_test.mind;" color-space="sRGB"
         renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false"
         device-orientation-permission-ui="enabled: false">
         <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
@@ -328,7 +290,6 @@
         <img src="" class="gif-image" id="gif-img" />
         <!-- <img src="assets/images/scan.png" class="scan" /> -->
     </div>
-
 </body>
 
 </html>
