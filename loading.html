@@ -1,0 +1,90 @@
+<!-- import aframe and then ar.js with image tracking / location based features -->
+<script src="js/aframe-master.min.js"></script>
+<script src="js/aframe-ar-nft.js"></script>
+<script src="js/gestures.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<script>
+    $(document).ready(function () {
+        var evt = "onorientationchange" in window ? "orientationchange" : "resize";
+        window.addEventListener(evt, resize, false);
+
+        function resize(fals) {
+            if (window.orientation == 0 || window.orientation == 180) {
+                $('.orientation-status').css('visibility', 'visible')
+                $('.scan').css('visibility', 'visible')
+            } else {
+                console.log('test')
+                window.location = 'index2.html'
+            }
+        }
+        resize(true);
+    });
+</script>
+<!-- style for the loader -->
+<style>
+    .arjs-loader {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .arjs-loader div {
+        text-align: center;
+        font-size: 1.25em;
+        color: white;
+    }
+
+    .gif-image {
+        position: absolute;
+        width: 360px;
+        visibility: hidden;
+    }
+
+    .orientation-status {
+        position: absolute;
+        top: 25%;
+        left: 0%;
+        width: 100%;
+    }
+
+    .bottom-right {
+        position: absolute;
+        bottom: 5%;
+        right: 5%;
+        width: 100px;
+    }
+
+    .scan {
+        width: 50%;
+    }
+
+    .img-container {
+        position: absolute;
+        top: 25%;
+        left: 0%;
+        text-align: center;
+    }
+</style>
+
+<body style="margin : 0px; overflow: hidden;">
+    <!-- a-frame scene -->
+    <a-scene id="test" vr-mode-ui="enabled: false;" renderer='antialias: true; alpha: true; precision: mediump;'
+        gesture-detector embedded arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
+        <a-entity camera></a-entity>
+    </a-scene>
+    <img src="assets/images/notice.png" class="orientation-status" />
+    <img src="assets/images/bottom-right.png" class="bottom-right" />
+</body>
