@@ -8,6 +8,7 @@
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-image-aframe.prod.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
 </head>
 <script>
     $(document).ready(function () {
@@ -26,15 +27,16 @@
         const exampleTarget1 = document.querySelector('#example-target-1');
         // detect target found
         exampleTarget1.addEventListener("targetFound", event => {
-            $('#gif-img').attr('src', 'model/p00/show.gif')
-            $('.gif-image').css('top', '-30%')
-            $('.gif-image').css('visibility', 'visible')
+            // $('#gif-img').attr('src', 'model/p00/show.gif')
+            // $('.gif-image').css('top', '-30%')
+            // $('.gif-image').css('visibility', 'visible')
+            console.log('test')
         });
         // detect target lost
         exampleTarget1.addEventListener("targetLost", event => {
-            $('.gif-image').css('visibility', 'hidden')
-            $('.gif-image').css('top', '0%')
-            $('#gif-img').attr('src', '')
+            // $('.gif-image').css('visibility', 'hidden')
+            // $('.gif-image').css('top', '0%')
+            // $('#gif-img').attr('src', '')
         });
         const exampleTarget2 = document.querySelector('#example-target-2');
         exampleTarget2.addEventListener("targetFound", event => {
@@ -175,11 +177,12 @@
             <a-asset-item id="bearModel"
                 src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/examples/image-tracking/assets/band-example/bear/scene.gltf">
             </a-asset-item>
-            <a-asset-item id="raccoonModel"
-                src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/examples/image-tracking/assets/band-example/raccoon/scene.gltf">
+            <a-asset-item id="raccoonModel" src="model/untitled.glb">
             </a-asset-item>
         </a-assets>
-        <a-entity id="example-target-1" mindar-image-target="targetIndex: 0"></a-entity>
+        <a-entity id="example-target-1" mindar-image-target="targetIndex: 0">
+            <a-gltf-model rotation="0 0 0" position="0 0 0" scale="0.05 0.05 0.05" src="#bearModel" animation-mixer>
+        </a-entity>
         <a-entity id="example-target-2" mindar-image-target="targetIndex: 1"></a-entity>
         <a-entity id="example-target-3" mindar-image-target="targetIndex: 2"></a-entity>
         <a-entity id="example-target-4" mindar-image-target="targetIndex: 3"></a-entity>
@@ -187,8 +190,7 @@
         <a-entity id="example-target-6" mindar-image-target="targetIndex: 5"></a-entity>
         <a-entity id="example-target-7" mindar-image-target="targetIndex: 6"></a-entity>
         <a-entity id="example-target-8" mindar-image-target="targetIndex: 7">
-            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
-                animation-mixer>
+            <a-gltf-model rotation="0 0 0" position="0 0 0" scale="0.05 0.05 0.05" src="#raccoonModel" animation-mixer>
         </a-entity>
         <a-entity id="example-target-9" mindar-image-target="targetIndex: 8">
             <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#raccoonModel"
