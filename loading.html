@@ -1,89 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>虎爺實習中</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <link href="css/styles.css" rel="stylesheet" />
 </head>
 
-<script>
-    $(document).ready(function () {
-        var evt = "onorientationchange" in window ? "orientationchange" : "resize";
-        window.addEventListener(evt, resize, false);
+<body style="background-color: #efb645;" id="page-top">
+    <section class="page-section" id="services">
+        <div class="container">
+            <div class="text-center mb-5">
+                <img src="assets/images/logo.png" width="50%" />
+            </div>
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">注意</h2>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-exclamation-triangle fa-stack-2x "></i>
+                    </span>
+                    <h4 class="my-3">請將智慧型裝置橫向操作</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        $('#gotoar').click(function () {
+            window.location = 'loading.html'
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.mindar-ui-scanning').css('display', 'none')
+            var evt = "onorientationchange" in window ? "orientationchange" : "resize";
+            window.addEventListener(evt, resize, false);
 
-        function resize(fals) {
-            if (window.orientation == 0 || window.orientation == 180) {
-                $('.orientation-status').css('visibility', 'visible')
-                $('.scan').css('visibility', 'visible')
-            } else {
-                console.log('test')
-                window.location = 'index2.html'
+            function resize(fals) {
+                if (window.orientation == 0 || window.orientation == 180) {} else {
+                    window.location = 'index2.html'
+                }
             }
-        }
-        resize(true);
-    });
-</script>
-<!-- style for the loader -->
-<style>
-    .arjs-loader {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.8);
-        z-index: 9999;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .arjs-loader div {
-        text-align: center;
-        font-size: 1.25em;
-        color: white;
-    }
-
-    .gif-image {
-        position: absolute;
-        width: 360px;
-        visibility: hidden;
-    }
-
-    .orientation-status {
-        position: absolute;
-        top: 25%;
-        left: 0%;
-        width: 100%;
-    }
-
-    .bottom-right {
-        position: absolute;
-        bottom: 5%;
-        right: 5%;
-        width: 100px;
-    }
-
-    .scan {
-        width: 50%;
-    }
-
-    .img-container {
-        position: absolute;
-        top: 25%;
-        left: 0%;
-        text-align: center;
-    }
-
-    .container {
-        width: 400px;
-        height: 400px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 2px solid #000000;
-    }
-</style>
-
-<body style="margin : 0px; overflow: hidden;">
-    <img src="assets/images/notice.png" class="orientation-status" />
-    <img src="assets/images/bottom-right.png" class="bottom-right" />
+            resize(true);
+        })
+    </script>
 </body>
+
+</html>
