@@ -82,10 +82,11 @@
 </style>
 
 <body style="margin : 0px; overflow: hidden;">
-    <!-- a-frame scene -->
-    <a-scene id="test" vr-mode-ui="enabled: false;" renderer='antialias: true; alpha: true; precision: mediump;'
-        gesture-detector embedded arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
-        <a-entity camera></a-entity>
+    <a-scene mindar-image="imageTargetSrc: model/targets_test.mind;" color-space="sRGB"
+        renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false"
+        device-orientation-permission-ui="enabled: false">
+        <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
     </a-scene>
     <img src="assets/images/notice.png" class="orientation-status" />
     <img src="assets/images/bottom-right.png" class="bottom-right" />
