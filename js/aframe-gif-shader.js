@@ -512,8 +512,8 @@
 	   * @private
 	   */
 	  __draw: function __draw() {
-	    
-	     this.__clearCanvas(); this.__ctx.drawImage(this.__frames[this.__frameIdx], 0, 0, this.__width, this.__height); this.__texture.needsUpdate = true;
+	    this.__ctx.drawImage(this.__frames[this.__frameIdx], 0, 0, this.__width, this.__height);
+	    this.__texture.needsUpdate = true;
 	  },
 
 
@@ -542,8 +542,8 @@
 	    this.__frames = frames;
 	    this.__frameCnt = times.length;
 	    this.__startTime = Date.now();
-	    this.__width = THREE.Math.nearestPowerOfTwo(frames[0].width);
-	    this.__height = THREE.Math.nearestPowerOfTwo(frames[0].height);
+	    this.__width = THREE.Math.floorPowerOfTwo(frames[0].width);
+	    this.__height = THREE.Math.floorPowerOfTwo(frames[0].height);
 	    this.__cnv.width = this.__width;
 	    this.__cnv.height = this.__height;
 	    this.__draw();
