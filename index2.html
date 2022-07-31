@@ -88,11 +88,12 @@
 
 <body>
     <a-scene mindar-image="imageTargetSrc: model/targets.mind;" color-space="sRGB"
-        renderer="logarithmicDepthBuffer: true;colorManagement: true, physicallyCorrectLights"
-        vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+        renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false"
+        device-orientation-permission-ui="enabled: false">
         <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
         <a-entity id="example-target-0" mindar-image-target="targetIndex: 0">
-            <a-entity geometry="primitive:plane;" material="shader:gif;src:url(gifs/03.gif);opacity:1.0">
+            <a-entity geometry="primitive:plane;width:1;height:0.7;"
+                material="shader:gif;src:url(gifs/03.gif);opacity:1.0">
             </a-entity>
         </a-entity>
         <a-entity id="example-target-1" mindar-image-target="targetIndex: 1">
