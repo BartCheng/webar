@@ -518,8 +518,6 @@
 
 	__draw: function __draw() {
 	    this.__ctx.drawImage(this.__frames[this.__frameIdx], 0, 0, this.__width, this.__height);
-		setTimeout(function () {
-		}, 100)
 		this.__texture.needsUpdate = true;
 	  },
 
