@@ -23,6 +23,17 @@
         }
         resize(true);
     })
+    document.addEventListener("DOMContentLoaded", function () {
+        const exampleTarget = document.querySelector('#example-target-8');
+        // detect target found
+        exampleTarget.addEventListener("targetFound", event => {
+            console.log("target found");
+        });
+        // detect target lost
+        exampleTarget.addEventListener("targetLost", event => {
+            console.log("target lost");
+        });
+    });
 </script>
 <!-- style for the loader -->
 <style>
@@ -87,7 +98,7 @@
 </style>
 
 <body>
-    <a-scene mindar-image="imageTargetSrc: model/targets_0830_test.mind;" color-space="sRGB"
+    <a-scene mindar-image="imageTargetSrc: model/targets_1030_02_test.mind;" color-space="sRGB"
         renderer="physicallyCorrectLights" vr-mode-ui="enabled: false"
         device-orientation-permission-ui="enabled: false">
         <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
@@ -107,7 +118,7 @@
                 material="shader:gif;src:url(gifs/06.gif);opacity:1.0">
             </a-entity>
         </a-entity>
-        <a-entity id="example-target-3" mindar-image-target="targetIndex: 2">
+        <a-entity id="example-target-3" mindar-image-target="targetIndex: 1">
             <a-entity geometry="primitive:plane;width:1;height:0.7;"
                 material="shader:gif;src:url(gifs/07.gif);opacity:1.0">
             </a-entity>
@@ -117,7 +128,7 @@
                 material="shader:gif;src:url(gifs/08.gif);opacity:1.0">
             </a-entity>
         </a-entity>
-        <a-entity id="example-target-5" mindar-image-target="targetIndex: 3">
+        <a-entity id="example-target-5" mindar-image-target="targetIndex: 2">
             <a-entity geometry="primitive:plane;width:1;height:0.71;"
                 material="shader:gif;src:url(gifs/13.gif);opacity:1.0">
             </a-entity>
@@ -133,7 +144,7 @@
             </a-entity>
         </a-entity>
         <a-entity id="example-target-8" mindar-image-target="targetIndex: 0">
-            <a-entity geometry="primitive:plane;width:1;height:1.493;"
+            <a-entity geometry="primitive:plane;width:0.5;height:0.75;"
                 material="shader:gif;src:url(gifs/27.gif);opacity:1.0">
             </a-entity>
         </a-entity>
@@ -157,37 +168,37 @@
                 material="shader:gif;src:url(gifs/c03.gif);opacity:1.0">
             </a-entity>
         </a-entity>
-        <a-entity id="example-target-13" mindar-image-target="targetIndex: 15">
+        <a-entity id="example-target-13" mindar-image-target="targetIndex: 21">
             <a-entity geometry="primitive:plane;width:1;height:0.7;"
                 material="shader:gif;src:url(gifs/c04.gif);opacity:1.0">
             </a-entity>
         </a-entity>
-        <a-entity id="example-target-14" mindar-image-target="targetIndex: 16">
+        <a-entity id="example-target-14" mindar-image-target="targetIndex: 15">
             <a-entity geometry="primitive:plane;width:1;height:0.6;"
                 material="shader:gif;src:url(gifs/c05.gif);opacity:1.0">
             </a-entity>
         </a-entity>
-        <a-entity id="example-target-15" mindar-image-target="targetIndex: 17">
+        <a-entity id="example-target-15" mindar-image-target="targetIndex: 16">
             <a-entity geometry="primitive:plane;width:1;height:0.7;"
                 material="shader:gif;src:url(gifs/c06.gif);opacity:1.0">
             </a-entity>
         </a-entity>
-        <a-entity id="example-target-16" mindar-image-target="targetIndex: 18">
+        <a-entity id="example-target-16" mindar-image-target="targetIndex: 17">
             <a-entity geometry="primitive:plane;width:1;height:0.7;"
                 material="shader:gif;src:url(gifs/c07.gif);opacity:1.0">
             </a-entity>
         </a-entity>
-        <a-entity id="example-target-17" mindar-image-target="targetIndex: 19">
+        <a-entity id="example-target-17" mindar-image-target="targetIndex: 18">
             <a-entity geometry="primitive:plane;width:1;height:0.7;"
                 material="shader:gif;src:url(gifs/c08.gif);opacity:1.0">
             </a-entity>
         </a-entity>
-        <a-entity id="example-target-18" mindar-image-target="targetIndex: 20">
+        <a-entity id="example-target-18" mindar-image-target="targetIndex: 19">
             <a-entity geometry="primitive:plane;width:1;height:0.7;"
                 material="shader:gif;src:url(gifs/c09.gif);opacity:1.0">
             </a-entity>
         </a-entity>
-        <a-entity id="example-target-19" mindar-image-target="targetIndex: 21">
+        <a-entity id="example-target-19" mindar-image-target="targetIndex: 20">
             <a-entity geometry="primitive:plane;width:1;height:0.7;"
                 material="shader:gif;src:url(gifs/c10.gif);opacity:1.0">
             </a-entity>
